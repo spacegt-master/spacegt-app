@@ -11,4 +11,10 @@ import Layout from '@/layouts/default.vue'
 html {
   overflow: hidden;
 }
+
+html,
+body,
+#app {
+  height: 100%;
+}
 </style>

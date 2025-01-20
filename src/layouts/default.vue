@@ -2,72 +2,97 @@
   <v-app>
     <system-bar></system-bar>
     <v-layout class="mt-8">
-      <v-navigation-drawer v-model="drawer" permanent>
-        <div class="d-flex justify-center pa-4">
-          <v-avatar image="https://vuetifyjs.b-cdn.net/docs/images/logos/v.svg" />
-        </div>
+      <v-navigation-drawer v-model="drawer">
+        <template #prepend>
+        </template>
 
-        <v-btn class="text-none" prepend-icon="mdi-view-dashboard" size="x-small" stacked text="Dashboard" tile
-          variant="text" width="80" />
+        <v-list density="compact" nav slim>
+          <v-list-subheader>User</v-list-subheader>
 
-        <v-btn class="text-none" size="x-small" stacked tile variant="text" width="80">
-          <v-badge content="39" floating>
-            <v-icon>mdi-account-circle</v-icon>
-          </v-badge>
+          <v-list-item active link prepend-icon="mdi-view-dashboard" title="Dashboard" />
 
-          <div class="mt-1">Friends</div>
-        </v-btn>
+          <v-list-group fluid>
+            <template #activator="{ props: activatorProps }">
+              <v-list-item v-bind="activatorProps" prepend-icon="mdi-account-circle" subtitle="Manage your account"
+                title="Account" />
+            </template>
 
-        <v-btn class="text-none" prepend-icon="mdi-cloud-download" size="x-small" stacked text="Downloads" tile
-          variant="text" width="80" />
+            <v-list-item link prepend-icon="mdi-circle-small" title="Downloads" />
 
-        <v-btn class="text-none" prepend-icon="mdi-history" size="x-small" stacked text="History" tile variant="text"
-          width="80" />
+            <v-list-item link prepend-icon="mdi-circle-small" title="Subscriptions" />
 
-        <v-btn class="text-none" prepend-icon="mdi-currency-usd" size="x-small" stacked text="Sales" tile variant="text"
-          width="80" />
+            <v-list-item link prepend-icon="mdi-circle-small" title="History" />
+          </v-list-group>
 
-        <v-btn class="text-none" prepend-icon="mdi-trending-up" size="x-small" stacked text="Trend" tile variant="text"
-          width="80" />
+          <v-list-subheader>Social</v-list-subheader>
+
+          <v-list-item link prepend-icon="mdi-account-group" title="Friends">
+            <template #append>
+              <v-badge content="39" inline />
+            </template>
+          </v-list-item>
+
+          <v-list-item link prepend-icon="mdi-bell-badge" title="Notifications" />
+
+          <v-list-subheader>Commerce</v-list-subheader>
+
+          <v-list-item link prepend-icon="mdi-currency-usd" title="Sales" />
+
+          <v-list-item link prepend-icon="mdi-trending-up" title="Projections" />
+        </v-list>
 
         <template #append>
-          <div class="d-flex justify-center pa-4">
-            <v-btn icon variant="text">
-              <v-avatar image="https://cdn.vuetifyjs.com/images/john.jpg" />
-
-              <v-menu activator="parent" location="top">
-                <v-list density="compact" nav slim>
-                  <v-list-item link prepend-icon="mdi-cog" title="Settings" />
-
-                  <v-list-item link prepend-icon="mdi-logout" title="Logout" />
-                </v-list>
-              </v-menu>
-            </v-btn>
-          </div>
+          <v-divider />
+          <v-list-item class="ma-2" link nav prepend-icon="mdi-cog-outline" title="Settings" />
         </template>
       </v-navigation-drawer>
 
       <v-app-bar :elevation="2" title="Application">
         <template #prepend>
-          <v-app-bar-nav-icon @click="drawer = !drawer" />
+          <v-app-bar-nav-icon scroll-behavior="collapse" @click="drawer = !drawer" />
+        </template>
+        <template #append>
+          <v-btn color="medium-emphasis" icon="mdi-bell-outline" />
+
+          <v-divider class="mx-4 align-self-center" length="40%" vertical />
+
+          <v-btn class="text-none me-1 px-3" height="48" slim>
+            <template #prepend>
+              <v-avatar color="surface-light" image="https://cdn.vuetifyjs.com/images/john.png" size="32" start />
+            </template>
+
+            <span class="hidden-sm-and-down">John Leider</span>
+
+            <v-menu activator="parent">
+              <v-list density="compact" nav>
+                <v-list-item append-icon="mdi-cog-outline" link title="Settings" />
+
+                <v-list-item append-icon="mdi-logout" link title="Logout" />
+              </v-list>
+            </v-menu>
+
+            <template #append>
+              <v-icon color="medium-emphasis" icon="mdi-chevron-down" />
+            </template>
+          </v-btn>
         </template>
       </v-app-bar>
 
-      <v-main>
+      <v-main class="overflow-auto">
         <div class="pa-4">
           <h2 class="text-h4 font-weight-bold mb-4">Dashboard</h2>
 
-          <v-sheet border="dashed md" color="surface-light" height="500" rounded="lg" width="100%" />
+          <v-sheet border="dashed md" color="surface-light" height="5000" rounded="lg" width="100%" />
         </div>
       </v-main>
     </v-layout>
   </v-app>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, shallowRef } from 'vue'
+
 const drawer = shallowRef(true)
-const rail = ref(true)
 </script>
 
 <style lang="scss" scoped></style>
