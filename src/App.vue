@@ -2,7 +2,7 @@
   <layout></layout>
 </template>
 
-<script setup>
+<script  lang="ts" setup>
 import Layout from '@/layouts/default.vue'
 
 </script>
