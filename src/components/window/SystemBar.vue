@@ -1,15 +1,15 @@
 <template>
-  <v-system-bar window data-tauri-drag-region>
-    <v-icon class="me-2" icon="mdi-message"></v-icon>
+  <v-system-bar window data-tauri-drag-region :color="transparent ? 'transparent' : undefined">
+    <v-icon class="me-2" icon="mdi-message" v-if="!transparent"></v-icon>
 
-    <span>10 unread messages</span>
+    <span v-if="!transparent">10 unread messages</span>
 
     <v-spacer></v-spacer>
 
     <v-btn icon="mdi-window-minimize" variant="text" size="x-small" class="rounded-0" @click="minimize"></v-btn>
 
-    <v-btn :icon="isMaximize ? 'mdi-window-restore' : 'mdi-window-maximize'" variant="text" size="x-small" class="rounded-0"
-      @click="maximize"></v-btn>
+    <v-btn :icon="isMaximize ? 'mdi-window-restore' : 'mdi-window-maximize'" variant="text" size="x-small"
+      class="rounded-0" @click="maximize"></v-btn>
 
     <v-btn icon="mdi-close" variant="text" size="x-small" class="rounded-0" @click="close"></v-btn>
   </v-system-bar>
@@ -18,6 +18,8 @@
 <script setup>
 import { useScreenMaximize } from '@/utils/screen';
 import { Window } from '@tauri-apps/api/window';
+
+defineProps({ transparent: { type: Boolean, default: false } })
 
 const { isMaximize } = useScreenMaximize()
 

@@ -43,20 +43,20 @@
 
         <template #append>
           <v-divider />
-          <v-list-item class="ma-2" link nav prepend-icon="mdi-cog-outline" title="Settings" />
+          <v-list-item class="ma-2" link nav prepend-icon="mdi-cog-outline" title="Settings" to="/settings" />
         </template>
       </v-navigation-drawer>
 
-      <v-app-bar :elevation="2" title="Application">
+      <v-app-bar :elevation="2" title="Application" density="comfortable">
         <template #prepend>
-          <v-app-bar-nav-icon scroll-behavior="collapse" @click="drawer = !drawer" />
+          <v-app-bar-nav-icon scroll-behavior="collapse" density="comfortable" @click="drawer = !drawer" />
         </template>
         <template #append>
-          <v-btn color="medium-emphasis" icon="mdi-bell-outline" />
+          <v-btn color="medium-emphasis" icon="mdi-bell-outline" density="comfortable" />
 
           <v-divider class="mx-4 align-self-center" length="40%" vertical />
 
-          <v-btn class="text-none me-1 px-3" height="48" slim>
+          <v-btn class="text-none me-1 px-3" height="42" slim>
             <template #prepend>
               <v-avatar color="surface-light" image="https://cdn.vuetifyjs.com/images/john.png" size="32" start />
             </template>
@@ -67,7 +67,7 @@
               <v-list density="compact" nav>
                 <v-list-item append-icon="mdi-cog-outline" link title="Settings" />
 
-                <v-list-item append-icon="mdi-logout" link title="Logout" />
+                <v-list-item append-icon="mdi-logout" link title="Logout" to="/login" />
               </v-list>
             </v-menu>
 
@@ -79,17 +79,14 @@
       </v-app-bar>
 
       <v-main class="overflow-auto">
-        <div class="pa-4">
-          <h2 class="text-h4 font-weight-bold mb-4">Dashboard</h2>
-
-          <v-sheet border="dashed md" color="surface-light" height="5000" rounded="lg" width="100%" />
-        </div>
+        <router-view></router-view>
       </v-main>
     </v-layout>
   </v-app>
 </template>
 
 <script setup lang="ts">
+import HelloWorld from '@/components/HelloWorld.vue';
 import { ref, shallowRef } from 'vue'
 
 const drawer = shallowRef(true)

@@ -1,9 +1,9 @@
 <template>
-  <layout></layout>
+  <router-view></router-view>
 </template>
 
-<script  lang="ts" setup>
-import Layout from '@/layouts/default.vue'
+<script lang="ts" setup>
+
 
 </script>
 
