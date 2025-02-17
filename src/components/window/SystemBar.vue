@@ -1,10 +1,12 @@
 <template>
-  <v-system-bar window data-tauri-drag-region :color="transparent ? 'transparent' : undefined">
+  <v-system-bar window data-tauri-drag-region :color="transparent ? 'transparent' : undefined" class="pr-0">
     <v-icon class="me-2" icon="mdi-message" v-if="!transparent"></v-icon>
 
     <span v-if="!transparent">10 unread messages</span>
 
     <v-spacer></v-spacer>
+
+    <ThemeSwitch></ThemeSwitch>
 
     <v-btn icon="mdi-window-minimize" variant="text" size="x-small" class="rounded-0" @click="minimize"></v-btn>
 

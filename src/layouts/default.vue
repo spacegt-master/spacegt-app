@@ -7,9 +7,18 @@
         </template>
 
         <v-list density="compact" nav slim>
+
+          <v-list-item link prepend-icon="mdi-laptop" title="Home" to="/home" />
+
+          <v-list-subheader>Ecommerce</v-list-subheader>
+
+          <v-list-item link prepend-icon="mdi-laptop" title="Storefront" to="/ecommerce/storefront" />
+
           <v-list-subheader>User</v-list-subheader>
 
-          <v-list-item active link prepend-icon="mdi-view-dashboard" title="Dashboard" />
+          <v-list-item link prepend-icon="mdi-laptop" title="Demo" to="/demo" />
+
+          <v-list-item link prepend-icon="mdi-view-dashboard" title="Dashboard" />
 
           <v-list-group fluid>
             <template #activator="{ props: activatorProps }">
@@ -42,17 +51,31 @@
         </v-list>
 
         <template #append>
+          <v-card class="mx-4 mb-5 d-none d-lg-block" color="indigo" flat rounded="lg">
+            <v-card-title>Upgrade Pro</v-card-title>
+
+            <v-card-subtitle>Get access to all features</v-card-subtitle>
+
+            <v-card-actions>
+              <v-btn color="white" to="/pricing">Get Pro</v-btn>
+            </v-card-actions>
+          </v-card>
+
           <v-divider />
+
           <v-list-item class="ma-2" link nav prepend-icon="mdi-cog-outline" title="Settings" to="/settings" />
         </template>
       </v-navigation-drawer>
+
+      <ShoppingCarts v-model="shoppingCartsDrawer"></ShoppingCarts>
 
       <v-app-bar :elevation="2" title="Application" density="comfortable">
         <template #prepend>
           <v-app-bar-nav-icon scroll-behavior="collapse" density="comfortable" @click="drawer = !drawer" />
         </template>
         <template #append>
-          <v-btn color="medium-emphasis" icon="mdi-bell-outline" density="comfortable" />
+          <v-btn class="ms-1" color="medium-emphasis" icon="mdi-bell-outline" density="comfortable" />
+          <v-btn class="ms-1" color="medium-emphasis" icon="mdi-cart-outline" density="comfortable" @click="shoppingCartsDrawer = true" />
 
           <v-divider class="mx-4 align-self-center" length="40%" vertical />
 
@@ -78,16 +101,20 @@
         </template>
       </v-app-bar>
 
-      <v-main class="overflow-auto">
-        <router-view></router-view>
+      <v-main>
+        <div class="overflow-auto h-100">
+          <router-view></router-view>
+        </div>
       </v-main>
     </v-layout>
   </v-app>
 </template>
 
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue';
+import ShoppingCarts from '@/components/ShoppingCarts.vue';
 import { ref, shallowRef } from 'vue'
+
+const shoppingCartsDrawer = ref(false)
 
 const drawer = shallowRef(true)
 </script>

@@ -19,7 +19,16 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '//': RouteRecordInfo<'//', '/', Record<never, never>, Record<never, never>>,
+    '//demo': RouteRecordInfo<'//demo', '/demo', Record<never, never>, Record<never, never>>,
+    '//ecommerce/category': RouteRecordInfo<'//ecommerce/category', '/ecommerce/category', Record<never, never>, Record<never, never>>,
+    '//ecommerce/checkout': RouteRecordInfo<'//ecommerce/checkout', '/ecommerce/checkout', Record<never, never>, Record<never, never>>,
+    '//ecommerce/order-history': RouteRecordInfo<'//ecommerce/order-history', '/ecommerce/order-history', Record<never, never>, Record<never, never>>,
+    '//ecommerce/product': RouteRecordInfo<'//ecommerce/product', '/ecommerce/product', Record<never, never>, Record<never, never>>,
+    '//ecommerce/promo': RouteRecordInfo<'//ecommerce/promo', '/ecommerce/promo', Record<never, never>, Record<never, never>>,
+    '//ecommerce/storefront': RouteRecordInfo<'//ecommerce/storefront', '/ecommerce/storefront', Record<never, never>, Record<never, never>>,
+    '//ecommerce/workspace': RouteRecordInfo<'//ecommerce/workspace', '/ecommerce/workspace', Record<never, never>, Record<never, never>>,
+    '//home': RouteRecordInfo<'//home', '/home', Record<never, never>, Record<never, never>>,
+    '//pricing': RouteRecordInfo<'//pricing', '/pricing', Record<never, never>, Record<never, never>>,
     '//settings': RouteRecordInfo<'//settings', '/settings', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
   }
