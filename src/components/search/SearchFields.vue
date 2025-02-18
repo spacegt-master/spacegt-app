@@ -1,8 +1,8 @@
 <template>
   <v-text-field v-model="value" class="border border-surface rounded-lg" density="compact" flat hide-details
-    max-width="400" :min-width="focused ? 400 : 300" persistent-placeholder placeholder="Search"
-    prepend-inner-icon="mdi-magnify" rounded="lg" single-line variant="solo-filled" :class="{ 'mr-12': focused }"
-    @update:focused="(value) => focused = value">
+    max-width="400" :min-width="focused && $vuetify.display.lgAndUp ? 400 : 300" persistent-placeholder
+    placeholder="Search" prepend-inner-icon="mdi-magnify" rounded="lg" single-line variant="solo-filled"
+    :class="{ 'mr-12': focused && $vuetify.display.lgAndUp }" @update:focused="(value) => focused = value">
     <template #append-inner>
       Ctrl+K
     </template>

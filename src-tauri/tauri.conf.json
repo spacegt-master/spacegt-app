@@ -12,13 +12,29 @@
   "app": {
     "windows": [
       {
-        "title": "SpaceGT",
-        "width": 1281,
+        "label": "main",
+        "width": 1280,
         "height": 720,
+        "minWidth": 845,
+        "minHeight": 600,
         "fullscreen": false,
         "center": true,
         "resizable": true,
-        "decorations": false
+        "decorations": false,
+        "visible": false
+      },
+      {
+        "label": "splashscreen",
+        "url": "splashscreen.html",
+        "width": 1280,
+        "height": 720,
+        "minWidth": 845,
+        "minHeight": 600,
+        "fullscreen": false,
+        "center": true,
+        "resizable": false,
+        "decorations": false,
+        "visible": true
       }
     ],
     "security": {

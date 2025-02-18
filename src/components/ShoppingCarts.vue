@@ -48,7 +48,7 @@
       </v-list-item>
 
       <div class="pa-4">
-        <v-btn block class="text-none mb-4" color="primary" flat height="50" rounded="lg" text="Checkout" />
+        <v-btn block class="text-none mb-4" color="primary" flat height="50" rounded="lg" text="Checkout" to="/ecommerce/checkout" />
 
         <v-btn block class="text-none" color="primary" rounded="lg" text="Continue shopping" variant="plain" />
       </div>

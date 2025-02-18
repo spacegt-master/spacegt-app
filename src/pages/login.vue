@@ -1,8 +1,8 @@
 <template>
-  <v-layout>
+  <v-layout class="h-100">
     <app-bar transparent></app-bar>
-    <v-main min-height="800">
-      <v-container class="h-100 pa-4" fluid>
+    <v-main class="h-100 ">
+      <v-container class="h-100 " fluid>
         <v-row align="center" class="h-100" justify="center">
           <v-sheet class="flex-1-1 px-4" color="background" max-width="420">
             <v-img class="mx-auto mb-4" max-width="60" src="@/assets/logo.png" />
