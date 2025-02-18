@@ -19,22 +19,24 @@
         "minHeight": 600,
         "fullscreen": false,
         "center": true,
-        "resizable": true,
         "decorations": false,
-        "visible": false
+        "visible": false,
+        "transparent": false,
+        "shadow": true
       },
       {
         "label": "splashscreen",
-        "url": "splashscreen.html",
+        "url": "/splashscreen",
         "width": 1280,
         "height": 720,
         "minWidth": 845,
         "minHeight": 600,
         "fullscreen": false,
         "center": true,
-        "resizable": false,
         "decorations": false,
-        "visible": true
+        "visible": true,
+        "transparent": true,
+        "shadow": false
       }
     ],
     "security": {
