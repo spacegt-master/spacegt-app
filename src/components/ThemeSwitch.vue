@@ -1,5 +1,5 @@
 <template>
-  <v-switch class="pr-4" v-model="themeStore.isDark" hide-details @change="themeStore.useSystemThemes = false">
+  <v-switch v-model="themeStore.isDark" hide-details @change="themeStore.useSystemThemes = false">
     <template #label>
       <span class="text-overline">{{ themeStore.isDark ? 'Dark' : 'Light' }}</span>
     </template>
@@ -12,4 +12,8 @@ import { useThemeStore } from '@/stores/theme';
 const themeStore = useThemeStore()
 </script>
 
-<style scoped></style>
+<style scoped>
+.v-switch {
+  min-width: 100px;
+}
+</style>

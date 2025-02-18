@@ -7,11 +7,14 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppBar: typeof import('./src/components/window/AppBar.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchFields: typeof import('./src/components/SearchFields.vue')['default']
+    SearchPalettes: typeof import('./src/components/SearchPalettes.vue')['default']
     ShoppingCarts: typeof import('./src/components/ShoppingCarts.vue')['default']
-    SystemBar: typeof import('./src/components/window/SystemBar.vue')['default']
+    Snackbar: typeof import('./src/components/Snackbar.vue')['default']
     ThemeSwitch: typeof import('./src/components/ThemeSwitch.vue')['default']
   }
 }

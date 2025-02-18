@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <system-bar transparent></system-bar>
+    <app-bar transparent></app-bar>
     <v-main min-height="800">
       <v-container class="h-100 pa-4" fluid>
         <v-row align="center" class="h-100" justify="center">

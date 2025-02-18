@@ -13,10 +13,11 @@
     "windows": [
       {
         "title": "SpaceGT",
-        "width": 1280,
+        "width": 1281,
         "height": 720,
-        "resizable": true,
         "fullscreen": false,
+        "center": true,
+        "resizable": true,
         "decorations": false
       }
     ],

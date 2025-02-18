@@ -1,7 +1,14 @@
 <template>
   <v-app>
-    <system-bar></system-bar>
-    <v-layout class="mt-8">
+    <app-bar @nav-switch="drawer = !drawer"
+      @shopping-carts-switch="shoppingCartsDrawer = !shoppingCartsDrawer"></app-bar>
+
+    <ShoppingCarts v-model="shoppingCartsDrawer"></ShoppingCarts>
+
+    <SearchPalettes></SearchPalettes>
+
+    <v-layout class="mt-16">
+
       <v-navigation-drawer v-model="drawer">
         <template #prepend>
         </template>
@@ -51,7 +58,7 @@
         </v-list>
 
         <template #append>
-          <v-card class="mx-4 mb-5 d-none d-lg-block" color="indigo" flat rounded="lg">
+          <v-card class="mx-4 mb-5 mt-2 d-none d-lg-block" color="indigo" flat rounded="lg">
             <v-card-title>Upgrade Pro</v-card-title>
 
             <v-card-subtitle>Get access to all features</v-card-subtitle>
@@ -67,41 +74,9 @@
         </template>
       </v-navigation-drawer>
 
-      <ShoppingCarts v-model="shoppingCartsDrawer"></ShoppingCarts>
-
-      <v-app-bar :elevation="2" title="Application" density="comfortable">
-        <template #prepend>
-          <v-app-bar-nav-icon scroll-behavior="collapse" density="comfortable" @click="drawer = !drawer" />
-        </template>
-        <template #append>
-          <v-btn class="ms-1" color="medium-emphasis" icon="mdi-bell-outline" density="comfortable" />
-          <v-btn class="ms-1" color="medium-emphasis" icon="mdi-cart-outline" density="comfortable" @click="shoppingCartsDrawer = true" />
-
-          <v-divider class="mx-4 align-self-center" length="40%" vertical />
-
-          <v-btn class="text-none me-1 px-3" height="42" slim>
-            <template #prepend>
-              <v-avatar color="surface-light" image="https://cdn.vuetifyjs.com/images/john.png" size="32" start />
-            </template>
-
-            <span class="hidden-sm-and-down">John Leider</span>
-
-            <v-menu activator="parent">
-              <v-list density="compact" nav>
-                <v-list-item append-icon="mdi-cog-outline" link title="Settings" />
-
-                <v-list-item append-icon="mdi-logout" link title="Logout" to="/login" />
-              </v-list>
-            </v-menu>
-
-            <template #append>
-              <v-icon color="medium-emphasis" icon="mdi-chevron-down" />
-            </template>
-          </v-btn>
-        </template>
-      </v-app-bar>
-
       <v-main>
+        <Snackbar></Snackbar>
+
         <div class="overflow-auto h-100">
           <router-view></router-view>
         </div>
@@ -111,7 +86,6 @@
 </template>
 
 <script setup lang="ts">
-import ShoppingCarts from '@/components/ShoppingCarts.vue';
 import { ref, shallowRef } from 'vue'
 
 const shoppingCartsDrawer = ref(false)
