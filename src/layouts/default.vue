@@ -9,23 +9,30 @@
 
     <v-layout class="mt-16">
 
-      <v-navigation-drawer v-model="drawer">
+      <v-navigation-drawer v-model="drawer" :mobile="$vuetify.display.smAndDown">
         <template #prepend>
         </template>
 
         <v-list density="compact" nav slim>
 
-          <v-list-item link prepend-icon="mdi-laptop" title="Home" to="/home" />
+          <v-list-item link color="primary" prepend-icon="mdi-home-outline" title="Home" to="/home" />
 
           <v-list-subheader>Ecommerce</v-list-subheader>
 
-          <v-list-item link prepend-icon="mdi-laptop" title="Storefront" to="/ecommerce/storefront" />
+          <v-list-item link color="primary" prepend-icon="mdi-store-outline" title="Storefront" to="/ecommerce/storefront" />
+
+          <v-list-item link color="primary" prepend-icon="mdi-sale-outline" title="Promo" to="/ecommerce/promo" />
+
+          <v-list-item link color="primary" prepend-icon="mdi-shape-outline" title="Category" to="/ecommerce/category" />
+
+          <v-list-item link color="primary" prepend-icon="mdi-clipboard-text-clock-outline" title="Order History"
+            to="/ecommerce/order-history" />
 
           <v-list-subheader>User</v-list-subheader>
 
-          <v-list-item link prepend-icon="mdi-laptop" title="Demo" to="/demo" />
+          <v-list-item link color="primary" prepend-icon="mdi-laptop" title="Demo" to="/demo" />
 
-          <v-list-item link prepend-icon="mdi-view-dashboard" title="Dashboard" />
+          <v-list-item link color="primary" prepend-icon="mdi-view-dashboard" title="Dashboard" />
 
           <v-list-group fluid>
             <template #activator="{ props: activatorProps }">
@@ -33,11 +40,11 @@
                 title="Account" />
             </template>
 
-            <v-list-item link prepend-icon="mdi-circle-small" title="Downloads" />
+            <v-list-item link color="primary" prepend-icon="mdi-circle-small" title="Downloads" />
 
-            <v-list-item link prepend-icon="mdi-circle-small" title="Subscriptions" />
+            <v-list-item link color="primary" prepend-icon="mdi-circle-small" title="Subscriptions" />
 
-            <v-list-item link prepend-icon="mdi-circle-small" title="History" />
+            <v-list-item link color="primary" prepend-icon="mdi-circle-small" title="History" />
           </v-list-group>
 
           <v-list-subheader>Social</v-list-subheader>
@@ -58,7 +65,7 @@
         </v-list>
 
         <template #append>
-          <v-card class="mx-4 mb-5 mt-2 d-none d-lg-block" color="indigo" flat rounded="lg">
+          <v-card class="mx-4 mb-5 mt-2" color="indigo" flat rounded="lg">
             <v-card-title>Upgrade Pro</v-card-title>
 
             <v-card-subtitle>Get access to all features</v-card-subtitle>

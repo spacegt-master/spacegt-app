@@ -5,8 +5,6 @@
 
       <v-tabs v-model="tab" color="primary" :mandatory="false">
         <v-tab v-for="(item, i) in items" :key="i" v-bind="item" class="text-none" :value="item.text" />
-        <v-tab class="text-none" text="Promo" to="/ecommerce/promo" />
-        <v-tab class="text-none" text="Order History" to="/ecommerce/order-history" />
       </v-tabs>
 
       <v-spacer />

@@ -31,6 +31,10 @@ export default defineConfig({
             name: "Roboto",
             styles: "wght@100;300;400;500;700;900",
           },
+          {
+            name: "Russo One",
+            styles: "wght@100;300;400;500;700;900",
+          },
         ],
       },
     }),

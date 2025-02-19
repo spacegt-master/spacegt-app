@@ -2,9 +2,11 @@
   <v-app-bar data-tauri-drag-region class="ps-4" flat :border="transparent ? 'none' : 'b'"
     :class="{ 'bg-transparent': transparent }">
     <template #default v-if="!transparent">
-      <v-app-bar-nav-icon v-if="$vuetify.display.mdAndDown" @click="$emit('navSwitch')" />
+      <v-app-bar-nav-icon v-if="$vuetify.display.smAndDown" @click="$emit('navSwitch')" />
 
-      <v-app-bar-title>Application</v-app-bar-title>
+      <v-app-bar-title v-if="$vuetify.display.mdAndUp">
+        <logo></logo>
+      </v-app-bar-title>
     </template>
 
     <template #append>
@@ -60,8 +62,6 @@ const minimize = () => appWindow.minimize()
 const maximize = () => appWindow.toggleMaximize()
 
 const close = () => appWindow.close()
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -69,11 +69,9 @@ const close = () => appWindow.close()
   pointer-events: none;
 }
 
-.v-app-bar:deep(.v-toolbar__append) {
-  pointer-events: all;
-}
-
-.v-app-bar-nav-icon {
+.v-app-bar-nav-icon,
+.v-input,
+.v-btn {
   pointer-events: all;
 }
 </style>
