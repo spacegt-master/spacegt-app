@@ -22,7 +22,7 @@
         "decorations": false,
         "visible": false,
         "transparent": false,
-        "shadow": true
+        "shadow": false
       },
       {
         "label": "splashscreen",

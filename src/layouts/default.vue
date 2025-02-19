@@ -1,5 +1,5 @@
 <template>
-  <v-app class="border-thin">
+  <v-app>
     <app-bar @nav-switch="drawer = !drawer"
       @shopping-carts-switch="shoppingCartsDrawer = !shoppingCartsDrawer"></app-bar>
 
