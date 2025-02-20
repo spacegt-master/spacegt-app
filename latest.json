@@ -1,11 +1,11 @@
 {
   "version": "0.1.1",
-  "notes": "Test build",
-  "pub_date": "2025-02-20T15:29:50.52Z",
+  "notes": "New version",
+  "pub_date": "2025-02-20T15:39:50.52Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRL0xjRklsSkdWMFU1MEZGOGtOdFNxamJHcFlvR3hsdmt4eW9oeVgxdmxERTVUYjMrMC94bm5vdi9PeXp5cVdoTk56M3FDOXdkVE9EL0RiTm5tS2pxaFFCbThYUmI1WWdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQwMDM0ODQwCWZpbGU6c3BhY2VndF8wLjEuMF94NjQtc2V0dXAuZXhlClptTHhnSkJRUlhFNE1lMFNZeFJZcjFySXVyRWhoenMvazNlbWcwZWtvMi9ld1MrZjZYVnpzanU5OEdlR3hnSFRzbGZadWM0VFhsZnBQWS8xcDVENEN3PT0K",
-      "url": "https://github.com/spacegt-master/spacegt-app/releases/download/Release/spacegt_0.1.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRL0xjRklsSkdWMGIwMVhsa2tPZzh2eVRyRHJzbUNMYWhCVlBicU1NRmVUOTJwQnlUZFhFdXpCbXVjT0VQUzduajdVTmhhbGMrazgyOXV5eTZCT3VCZm1mOGtSWjBoWWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQwMDM2OTMxCWZpbGU6c3BhY2VndF8wLjEuMV94NjQtc2V0dXAuZXhlCitVbml2T2U4QmhFUWFQemN1YXFYcjdrNVR4WHJvUGZEeG5hUTFyK0Z2ODRmQTluN01YbUZRRXMvZGwvMWNkZmlCYVZIWTlNYmFGMm93S1hFRUhKUEN3PT0K",
+      "url": "https://github.com/spacegt-master/spacegt-app/releases/download/v0.1.1/spacegt_0.1.1_x64-setup.exe"
     }
   }
 }
