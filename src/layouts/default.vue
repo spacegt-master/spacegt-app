@@ -28,11 +28,15 @@
           <v-list-item link color="primary" prepend-icon="mdi-clipboard-text-clock-outline" title="Order History"
             to="/ecommerce/order-history" />
 
+          <v-list-subheader>Other</v-list-subheader>
+
+          <v-list-item link prepend-icon="mdi-information-outline" title="About" to="/about" />
+
+          <v-list-item link prepend-icon="mdi-card-account-mail-outline" title="Contact" to="/contact" />
+
+          <v-list-item link prepend-icon="mdi-shield-alert-outline" title="404" to="/404" />
+
           <v-list-subheader>User</v-list-subheader>
-
-          <v-list-item link color="primary" prepend-icon="mdi-laptop" title="Demo" to="/demo" />
-
-          <v-list-item link color="primary" prepend-icon="mdi-view-dashboard" title="Dashboard" />
 
           <v-list-group fluid>
             <template #activator="{ props: activatorProps }">
@@ -46,22 +50,6 @@
 
             <v-list-item link color="primary" prepend-icon="mdi-circle-small" title="History" />
           </v-list-group>
-
-          <v-list-subheader>Social</v-list-subheader>
-
-          <v-list-item link prepend-icon="mdi-account-group" title="Friends">
-            <template #append>
-              <v-badge content="39" inline />
-            </template>
-          </v-list-item>
-
-          <v-list-item link prepend-icon="mdi-bell-badge" title="Notifications" />
-
-          <v-list-subheader>Commerce</v-list-subheader>
-
-          <v-list-item link prepend-icon="mdi-currency-usd" title="Sales" />
-
-          <v-list-item link prepend-icon="mdi-trending-up" title="Projections" />
         </v-list>
 
         <template #append>

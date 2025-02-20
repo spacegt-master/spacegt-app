@@ -19,7 +19,8 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '//demo': RouteRecordInfo<'//demo', '/demo', Record<never, never>, Record<never, never>>,
+    '//about': RouteRecordInfo<'//about', '/about', Record<never, never>, Record<never, never>>,
+    '//contact': RouteRecordInfo<'//contact', '/contact', Record<never, never>, Record<never, never>>,
     '//ecommerce/category': RouteRecordInfo<'//ecommerce/category', '/ecommerce/category', Record<never, never>, Record<never, never>>,
     '//ecommerce/checkout': RouteRecordInfo<'//ecommerce/checkout', '/ecommerce/checkout', Record<never, never>, Record<never, never>>,
     '//ecommerce/order-history': RouteRecordInfo<'//ecommerce/order-history', '/ecommerce/order-history', Record<never, never>, Record<never, never>>,
@@ -30,6 +31,8 @@ declare module 'vue-router/auto-routes' {
     '//home': RouteRecordInfo<'//home', '/home', Record<never, never>, Record<never, never>>,
     '//pricing': RouteRecordInfo<'//pricing', '/pricing', Record<never, never>, Record<never, never>>,
     '//settings': RouteRecordInfo<'//settings', '/settings', Record<never, never>, Record<never, never>>,
+    '//user/settings': RouteRecordInfo<'//user/settings', '/user/settings', Record<never, never>, Record<never, never>>,
+    '/404': RouteRecordInfo<'/404', '/404', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
     '/splashscreen': RouteRecordInfo<'/splashscreen', '/splashscreen', Record<never, never>, Record<never, never>>,
   }

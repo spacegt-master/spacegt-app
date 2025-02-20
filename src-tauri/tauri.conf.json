@@ -52,6 +52,18 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQxOTU5MTk0NDhDMTJEM0YKUldRL0xjRklsSkdWMFVWeG0xYnpsbU5JM25BVjhjVm12TGtXcWdvZVpWRjZVdWJYa2JQamVXekIK",
+      "endpoints": [
+        "https://cdn.crabnebula.app/update/spacegt/spacegt/{{target}}-{{arch}}/{{current_version}}"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
   }
 }

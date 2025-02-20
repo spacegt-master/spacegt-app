@@ -17,6 +17,7 @@ pub fn run() {
     // Don't write code before Tauri starts, write it in the
     // setup hook instead!
     tauri::Builder::default()
+        .plugin(tauri_plugin_updater::Builder::new().build())
         // Register a `State` to be managed by Tauri
         // We need write access to it so we wrap it in a `Mutex`
         .manage(Mutex::new(SetupState {
