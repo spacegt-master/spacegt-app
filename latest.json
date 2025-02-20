@@ -1,7 +1,7 @@
 {
-  "version": "0.1.1",
-  "notes": "New version",
-  "pub_date": "2025-02-20T15:39:50.52Z",
+  "version": "0.1.2",
+  "notes": "Optimize the app update module",
+  "pub_date": "2025-02-20T18:23:50.52Z",
   "platforms": {
     "windows-x86_64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRL0xjRklsSkdWMFZuL2E0T2ZkV1BxZlFQMzhwVjlXdDNKZFRFT0tkeFU0dWVvZTFlbGN4MWdWcGZkNnArWnIvblhZbDJYNCsvc3NmUDlOdUx2aGdmRzJFbDFXalNuendvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQwMDQ2ODQzCWZpbGU6c3BhY2VndF8wLjEuMl94NjQtc2V0dXAuZXhlCmkrSHMrZ1VpekJvWG05M1JvSUNEbksvNnY5VWw5cHRqU0JVdTlTNXMvdE9KMldHd3ZNcy9mWWowdm1zMHhXT2FMdlF5Qm5zTVFQb0VMUzlmdEE1OENBPT0K",
