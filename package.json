@@ -2,7 +2,7 @@
   "name": "spacegt",
   "private": true,
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -16,9 +16,12 @@
   "dependencies": {
     "@mdi/font": "7.4.47",
     "@tauri-apps/api": "^2.2.0",
+    "@tauri-apps/plugin-os": "~2",
     "@tauri-apps/plugin-process": "~2",
     "@tauri-apps/plugin-updater": "~2.5.0",
-    "@vueuse/core": "^12.4.0",
+    "@vueuse/core": "^12.7.0",
+    "@vueuse/integrations": "^12.7.0",
+    "change-case": "^5.4.4",
     "core-js": "^3.37.1",
     "pinia": "^3.0.1",
     "pinia-plugin-persistedstate": "^4.2.0",

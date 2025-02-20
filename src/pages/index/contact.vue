@@ -40,7 +40,19 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 
+const form = ref()
+
+const firstName = ref()
+const lastName = ref()
+const company = ref()
+const email = ref()
+const phoneNumber = ref()
+const message = ref()
+const agreement = ref()
+
+const errorMessages = ref()
 </script>
 
 <style lang="scss" scoped></style>

@@ -30,10 +30,6 @@
 
           <v-list-subheader>Other</v-list-subheader>
 
-          <v-list-item link prepend-icon="mdi-information-outline" title="About" to="/about" />
-
-          <v-list-item link prepend-icon="mdi-card-account-mail-outline" title="Contact" to="/contact" />
-
           <v-list-item link prepend-icon="mdi-shield-alert-outline" title="404" to="/404" />
 
           <v-list-subheader>User</v-list-subheader>
