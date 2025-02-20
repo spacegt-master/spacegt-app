@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "SpaceGT",
+  "productName": "spacegt",
   "version": "0.1.0",
   "identifier": "com.spacegt.app",
   "build": {
@@ -59,7 +59,7 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQxOTU5MTk0NDhDMTJEM0YKUldRL0xjRklsSkdWMFVWeG0xYnpsbU5JM25BVjhjVm12TGtXcWdvZVpWRjZVdWJYa2JQamVXekIK",
       "endpoints": [
-        "https://cdn.crabnebula.app/update/spacegt/spacegt/{{target}}-{{arch}}/{{current_version}}"
+        "https://gist.githubusercontent.com/spacegt-master/7e3f6e43fc9cd7d5a07e941d2feb591f/raw/9c78816147dff70b7d16de7ffda315bfd26a89f4/latest.json"
       ],
       "windows": {
         "installMode": "passive"
