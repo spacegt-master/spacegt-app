@@ -34,6 +34,30 @@
         </template>
       </v-card>
     </v-dialog>
+
+    <v-dialog v-model="drawer2" contained max-width="500">
+      <v-card rounded="lg">
+        <template #text>
+          <div class="text-center pt-4">
+            <v-avatar class="mb-4 pa-2" color="success" icon="mdi-check" size="x-large" variant="tonal">
+              <v-img src="/logo.png"></v-img>
+            </v-avatar>
+            <div class="font-weight-bold mb-6">
+              {{ app_name }} for {{ app_platform }}
+            </div>
+
+            <div class="text-body-2 text-medium-emphasis mb-6">
+              It's the latest version
+            </div>
+
+            <div class="d-flex ga-4">
+              <v-btn border class="text-none flex-1-1-100" color="surface" text="Cancel" variant="flat"
+                @click="drawer2 = false" />
+            </div>
+          </div>
+        </template>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -45,11 +69,13 @@ import { platform } from '@tauri-apps/plugin-os';
 import { onMounted, shallowRef } from 'vue'
 import { useChangeCase } from '@vueuse/integrations/useChangeCase';
 
+const drawer = shallowRef(false)
+
+const drawer2 = shallowRef(false)
+
 const app_name = shallowRef()
 
 const app_platform = shallowRef()
-
-const drawer = shallowRef(false)
 
 const version = shallowRef()
 
@@ -60,7 +86,7 @@ const notes = shallowRef()
 const checkResult = shallowRef()
 
 const CheckingForUpdates = async () => {
-  checkResult.value = await check(); 3
+  checkResult.value = await check();
 
   if (checkResult.value) {
     version.value = checkResult.value.version
@@ -70,6 +96,8 @@ const CheckingForUpdates = async () => {
     notes.value = checkResult.value.body
 
     drawer.value = true
+  } else {
+    drawer2.value = true
   }
 }
 
