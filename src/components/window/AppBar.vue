@@ -8,6 +8,9 @@
         <logo></logo>
       </v-app-bar-title>
     </template>
+    <template #default v-else>
+      <slot></slot>
+    </template>
 
     <template #append>
       <div class="d-flex ga-2 align-center" v-if="!transparent">

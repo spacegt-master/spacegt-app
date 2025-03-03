@@ -17,13 +17,20 @@
 
           <v-list-item link color="primary" prepend-icon="mdi-home-outline" title="Home" to="/home" />
 
+          <v-list-subheader>Portal</v-list-subheader>
+
+          <v-list-item link color="primary" prepend-icon="mdi-video-3d" title="Model"
+            to="/portal/model" />
+
           <v-list-subheader>Ecommerce</v-list-subheader>
 
-          <v-list-item link color="primary" prepend-icon="mdi-store-outline" title="Storefront" to="/ecommerce/storefront" />
+          <v-list-item link color="primary" prepend-icon="mdi-store-outline" title="Storefront"
+            to="/ecommerce/storefront" />
 
           <v-list-item link color="primary" prepend-icon="mdi-sale-outline" title="Promo" to="/ecommerce/promo" />
 
-          <v-list-item link color="primary" prepend-icon="mdi-shape-outline" title="Category" to="/ecommerce/category" />
+          <v-list-item link color="primary" prepend-icon="mdi-shape-outline" title="Category"
+            to="/ecommerce/category" />
 
           <v-list-item link color="primary" prepend-icon="mdi-clipboard-text-clock-outline" title="Order History"
             to="/ecommerce/order-history" />

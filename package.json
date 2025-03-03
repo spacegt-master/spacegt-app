@@ -19,6 +19,8 @@
     "@tauri-apps/plugin-os": "~2",
     "@tauri-apps/plugin-process": "~2",
     "@tauri-apps/plugin-updater": "~2.5.0",
+    "@tresjs/cientos": "^4.1.0",
+    "@tresjs/core": "^4.3.3",
     "@vueuse/core": "^12.7.0",
     "@vueuse/integrations": "^12.7.0",
     "change-case": "^5.4.4",
@@ -26,6 +28,7 @@
     "pinia": "^3.0.1",
     "pinia-plugin-persistedstate": "^4.2.0",
     "roboto-fontface": "*",
+    "three": "^0.174.0",
     "vue": "^3.4.31",
     "vuetify": "^3.7.12"
   },

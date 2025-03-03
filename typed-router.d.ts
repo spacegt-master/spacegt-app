@@ -29,11 +29,13 @@ declare module 'vue-router/auto-routes' {
     '//ecommerce/storefront': RouteRecordInfo<'//ecommerce/storefront', '/ecommerce/storefront', Record<never, never>, Record<never, never>>,
     '//ecommerce/workspace': RouteRecordInfo<'//ecommerce/workspace', '/ecommerce/workspace', Record<never, never>, Record<never, never>>,
     '//home': RouteRecordInfo<'//home', '/home', Record<never, never>, Record<never, never>>,
+    '//portal/model': RouteRecordInfo<'//portal/model', '/portal/model', Record<never, never>, Record<never, never>>,
     '//pricing': RouteRecordInfo<'//pricing', '/pricing', Record<never, never>, Record<never, never>>,
     '//settings': RouteRecordInfo<'//settings', '/settings', Record<never, never>, Record<never, never>>,
     '//user/settings': RouteRecordInfo<'//user/settings', '/user/settings', Record<never, never>, Record<never, never>>,
     '/404': RouteRecordInfo<'/404', '/404', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
+    '/model-framework': RouteRecordInfo<'/model-framework', '/model-framework', Record<never, never>, Record<never, never>>,
     '/splashscreen': RouteRecordInfo<'/splashscreen', '/splashscreen', Record<never, never>, Record<never, never>>,
   }
 }
