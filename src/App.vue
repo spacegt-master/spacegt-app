@@ -3,6 +3,7 @@
 </template>
 
 <script lang="ts" setup>
+import 'spacegt/dist/style.css'
 </script>
 
 <style>

@@ -14,10 +14,10 @@ export const useSnackbarStore = defineStore("snackbar", () => {
   const timeout = ref();
 
   const start = (options: {
-    subtitle: any;
-    type: any;
-    text: any;
-    timeout: any;
+    subtitle: string;
+    type: string;
+    text: string;
+    timeout: number;
   }) => {
     type.value = options.type;
     subtitle.value = options.subtitle;
@@ -38,10 +38,10 @@ export const useSnackbarStore = defineStore("snackbar", () => {
 });
 
 export const snackbar = (options: {
-  subtitle: any;
-  type: any;
-  text: any;
-  timeout: any;
+  subtitle: string;
+  type: string;
+  text: string;
+  timeout: number;
 }) => {
   const snackbarStore = useSnackbarStore();
   return snackbarStore.start(options);
