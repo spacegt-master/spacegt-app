@@ -3,7 +3,7 @@
     <v-btn class="text-none" color="primary" prepend-icon="mdi-progress-check" :ripple="false" slim
       text="Checking for updates" variant="text" @click="CheckingForUpdates" />
 
-    <v-dialog v-model="drawer" contained max-width="500">
+    <v-dialog v-model="drawer" contained max-width="500" persistent>
       <v-card rounded="lg">
         <template #text>
           <div class="text-center pt-4">
@@ -24,12 +24,26 @@
               {{ notes }}
             </div>
 
-            <div class="d-flex ga-4">
-              <v-btn border class="text-none flex-1-1-100" color="surface" text="Cancel" variant="flat"
-                @click="drawer = false" />
+            <v-window v-model="steps" direction="vertical">
+              <v-window-item value="check">
+                <div class="d-flex ga-4">
+                  <v-btn border class="text-none flex-1-1-100" color="surface" text="Cancel" variant="flat"
+                    @click="drawer = false" />
 
-              <v-btn class="text-none flex-1-1-100" color="primary" text="Update" variant="flat" @click="update()" />
-            </div>
+                  <v-btn class="text-none flex-1-1-100" color="primary" text="Update" variant="flat"
+                    @click="update()" />
+                </div>
+              </v-window-item>
+
+              <v-window-item value="download">
+                <div class="mt-4 text-overline">Download</div>
+                <v-progress-linear height="10" :model-value="progress"></v-progress-linear>
+              </v-window-item>
+              <v-window-item value="installed">
+                <div class="mt-4 text-overline">Installed</div>
+              </v-window-item>
+
+            </v-window>
           </div>
         </template>
       </v-card>
@@ -85,8 +99,13 @@ const notes = shallowRef()
 
 const checkResult = shallowRef()
 
+const steps = shallowRef('check') // download
+
+const progress = shallowRef(0)
+
 const CheckingForUpdates = async () => {
   checkResult.value = await check();
+  console.log(checkResult.value)
 
   if (checkResult.value) {
     version.value = checkResult.value.version
@@ -103,7 +122,9 @@ const CheckingForUpdates = async () => {
 
 const update = async () => {
   if (checkResult.value) {
-    console.log(`found update ${update.version} from ${update.date} with notes ${update.body}`);
+    console.log(`found update ${checkResult.version} from ${checkResult.date} with notes ${checkResult.body}`);
+
+    steps.value = 'download'
 
     let downloaded = 0;
     let contentLength = 0;
@@ -112,18 +133,27 @@ const update = async () => {
     await checkResult.value.downloadAndInstall((event) => {
       switch (event.event) {
         case 'Started':
+          progress.value = 0
+
           contentLength = event.data.contentLength;
           console.log(`started downloading ${event.data.contentLength} bytes`);
           break;
         case 'Progress':
           downloaded += event.data.chunkLength;
+
+          progress.value = Number.parseInt(downloaded / contentLength * 100)
+
           console.log(`downloaded ${downloaded} from ${contentLength}`);
           break;
         case 'Finished':
+          progress.value = 0
+
           console.log('download finished');
           break;
       }
     });
+
+    steps.value = 'installed'
 
     console.log('update installed');
     await relaunch();
