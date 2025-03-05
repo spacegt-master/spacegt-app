@@ -154,7 +154,6 @@ const update = async () => {
     });
 
     steps.value = 'installed'
-
     console.log('update installed');
     await relaunch();
   }
