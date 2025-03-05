@@ -104,8 +104,9 @@ const steps = shallowRef('check') // download
 const progress = shallowRef(0)
 
 const CheckingForUpdates = async () => {
-  checkResult.value = await check();
-  console.log(checkResult.value)
+  checkResult.value = await check({
+    timeout: 5000
+  });
 
   if (checkResult.value) {
     version.value = checkResult.value.version
@@ -134,30 +135,24 @@ const update = async () => {
       switch (event.event) {
         case 'Started':
           progress.value = 0
-
           contentLength = event.data.contentLength;
           console.log(`started downloading ${event.data.contentLength} bytes`);
           break;
         case 'Progress':
           downloaded += event.data.chunkLength;
-
           progress.value = Number.parseInt(downloaded / contentLength * 100)
-
           console.log(`downloaded ${downloaded} from ${contentLength}`);
           break;
         case 'Finished':
-          progress.value = 0
-
+          steps.value = 'installed'
           console.log('download finished');
           break;
       }
     });
 
-    steps.value = 'installed'
     console.log('update installed');
     await relaunch();
   }
-
 }
 
 onMounted(async () => {

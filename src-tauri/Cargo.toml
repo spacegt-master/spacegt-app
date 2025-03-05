@@ -1,8 +1,8 @@
 [package]
-name = "spacegt"
+name = "Spacegt"
 version = "0.1.3"
-description = "A Sspacegt App"
-authors = ["spacegt"]
+description = "A Spacegt App"
+authors = ["Spacegt"]
 license = ""
 repository = ""
 edition = "2021"
