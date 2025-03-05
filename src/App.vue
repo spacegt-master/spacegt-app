@@ -1,5 +1,8 @@
 <template>
-  <router-view></router-view>
+  <v-layout class="h-100">
+    <router-view></router-view>
+    <Snackbar></Snackbar>
+  </v-layout>
 </template>
 
 <script lang="ts" setup>

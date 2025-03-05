@@ -39,7 +39,7 @@ export const useSnackbarStore = defineStore("snackbar", () => {
 
 export const snackbar = (options: {
   subtitle: string;
-  type: string;
+  type: "error" | "info" | "success" | "warning";
   text: string;
   timeout: number;
 }) => {

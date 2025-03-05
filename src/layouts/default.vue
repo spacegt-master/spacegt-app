@@ -73,8 +73,6 @@
       </v-navigation-drawer>
 
       <v-main>
-        <Snackbar></Snackbar>
-
         <div class="overflow-auto h-100">
           <router-view></router-view>
         </div>
