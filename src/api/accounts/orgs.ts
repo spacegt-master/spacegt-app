@@ -36,7 +36,7 @@ export const OrgsApi = {
   },
   edit(data: { id: string; pid: string; name: string; maxUser: number }) {
     return axios({
-      url: "/api/orgs/del/edit",
+      url: "/api/orgs/edit",
       method: "post",
       headers: {
         "Content-Type": "multipart/form-data",

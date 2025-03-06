@@ -1,4 +1,5 @@
 import { useAuthenticationStore } from "@/stores/authentication";
+import { snackbar } from "@/stores/snackbar";
 import axios from "axios";
 
 const service = axios.create({
@@ -22,6 +23,17 @@ service.interceptors.response.use(
     return response.data;
   },
   (error) => {
+    if (
+      error.status === 403 &&
+      error.response.headers["content-type"] === "application/problem+json"
+    ) {
+      snackbar({
+        subtitle: error.response.data.detail,
+        type: "error",
+        text: undefined,
+        timeout: undefined,
+      });
+    }
     return Promise.reject(error);
   }
 );

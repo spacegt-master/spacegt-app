@@ -75,15 +75,15 @@ export const useNavigationStore = defineStore(
       },
       {
         type: "VListSubheader",
-        title: "User",
+        title: "Users",
       },
       {
         type: "VListGroup",
         fluid: true,
         activator: {
-          prependIcon: "mdi-account-circle",
+          prependIcon: "mdi-account-circle-outline",
           subtitle: "Manage your account",
-          title: "Account",
+          title: "Accounts",
         },
         childrenItems: [
           {
@@ -105,6 +105,22 @@ export const useNavigationStore = defineStore(
             title: "History",
           },
         ],
+      },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-shield-account-outline",
+        title: "Roles",
+        to: "/accounts/roles",
+        link: true,
+        color: "primary",
+      },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-bank",
+        title: "Orgs",
+        to: "/accounts/orgs",
+        link: true,
+        color: "primary",
       },
     ]);
 

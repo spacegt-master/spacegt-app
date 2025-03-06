@@ -10,7 +10,7 @@ export const RolesApi = {
       },
     });
   },
-  save(data: object) {
+  edit(data: object) {
     return axios({
       url: "/api/roles/edit",
       method: "post",
