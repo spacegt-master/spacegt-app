@@ -1,11 +1,28 @@
 import { defineStore } from "pinia";
-import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { ref } from "vue";
+
+export interface Users {
+  id: string;
+  username: string;
+  nickname: string;
+  email: string;
+  phone: string;
+  avatar: string;
+}
+
+export interface Authorities {
+  authority: string;
+  key: string;
+  name: string | null;
+}
 
 export const useAccountsStore = defineStore(
   "data-accounts",
   () => {
-    return {};
+    const account = ref<Users>();
+    const authorities = ref<Authorities[]>([]);
+
+    return { account, authorities };
   },
   {
     persist: true,

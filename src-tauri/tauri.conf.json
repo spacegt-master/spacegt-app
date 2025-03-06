@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "Spacegt",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "identifier": "com.spacegt.app",
   "build": {
     "frontendDist": "../dist",
@@ -58,7 +58,10 @@
   "plugins": {
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQxOTU5MTk0NDhDMTJEM0YKUldRL0xjRklsSkdWMFVWeG0xYnpsbU5JM25BVjhjVm12TGtXcWdvZVpWRjZVdWJYa2JQamVXekIK",
-      "endpoints": ["https://updater.spacegt.com/spacegt/latest.json"],
+      "endpoints": [
+        "https://updater.spacegt.com/spacegt/latest.json",
+        "https://raw.githubusercontent.com/spacegt-master/spacegt-app/refs/heads/main/latest.json"
+      ],
       "windows": {
         "installMode": "passive"
       }

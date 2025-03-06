@@ -14,45 +14,15 @@
         </template>
 
         <v-list density="compact" nav slim>
-
-          <v-list-item link color="primary" prepend-icon="mdi-home-outline" title="Home" to="/home" />
-
-          <v-list-subheader>Portal</v-list-subheader>
-
-          <v-list-item link color="primary" prepend-icon="mdi-video-3d" title="Model"
-            to="/portal/model" />
-
-          <v-list-subheader>Ecommerce</v-list-subheader>
-
-          <v-list-item link color="primary" prepend-icon="mdi-store-outline" title="Storefront"
-            to="/ecommerce/storefront" />
-
-          <v-list-item link color="primary" prepend-icon="mdi-sale-outline" title="Promo" to="/ecommerce/promo" />
-
-          <v-list-item link color="primary" prepend-icon="mdi-shape-outline" title="Category"
-            to="/ecommerce/category" />
-
-          <v-list-item link color="primary" prepend-icon="mdi-clipboard-text-clock-outline" title="Order History"
-            to="/ecommerce/order-history" />
-
-          <v-list-subheader>Other</v-list-subheader>
-
-          <v-list-item link prepend-icon="mdi-shield-alert-outline" title="404" to="/404" />
-
-          <v-list-subheader>User</v-list-subheader>
-
-          <v-list-group fluid>
-            <template #activator="{ props: activatorProps }">
-              <v-list-item v-bind="activatorProps" prepend-icon="mdi-account-circle" subtitle="Manage your account"
-                title="Account" />
+          <component v-for="item in navigationStore.defaultItems" :is="componentMatch(item.type)" v-bind="item">
+            <!-- VListGroup -->
+            <template v-if="item.type == 'VListGroup'" #activator="{ props: activatorProps }">
+              <v-list-item v-bind="{ ...activatorProps, ...item.activator }" />
             </template>
 
-            <v-list-item link color="primary" prepend-icon="mdi-circle-small" title="Downloads" />
+            <component v-for="child in item.children" :is="VListItem" v-bind="child"></component>
 
-            <v-list-item link color="primary" prepend-icon="mdi-circle-small" title="Subscriptions" />
-
-            <v-list-item link color="primary" prepend-icon="mdi-circle-small" title="History" />
-          </v-list-group>
+          </component>
         </v-list>
 
         <template #append>
@@ -68,7 +38,8 @@
 
           <v-divider />
 
-          <v-list-item class="ma-2" link nav prepend-icon="mdi-cog-outline" title="Settings" to="/settings" />
+          <component class="ma-2" v-for="item in navigationStore.appendItems" :is="VListItem" v-bind="item">
+          </component>
         </template>
       </v-navigation-drawer>
 
@@ -83,10 +54,25 @@
 
 <script setup lang="ts">
 import { ref, shallowRef } from 'vue'
+import { useNavigationStore } from '@/stores/navigation'
+import { VListGroup, VListItem, VListSubheader } from 'vuetify/components'
+
+const navigationStore = useNavigationStore()
 
 const shoppingCartsDrawer = ref(false)
 
 const drawer = shallowRef(true)
+
+const componentMatch = (type: string) => {
+  switch (type) {
+    case 'VListItem':
+      return VListItem
+    case 'VListSubheader':
+      return VListItem
+    case 'VListGroup':
+      return VListGroup
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>
