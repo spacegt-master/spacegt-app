@@ -126,7 +126,7 @@ const update = async () => {
     console.log(`found update ${checkResult.version} from ${checkResult.date} with notes ${checkResult.body}`);
 
     steps.value = 'download'
-
+    progress.value = 0
     let downloaded = 0;
     let contentLength = 0;
 
@@ -134,7 +134,6 @@ const update = async () => {
     await checkResult.value.downloadAndInstall((event) => {
       switch (event.event) {
         case 'Started':
-          progress.value = 0
           contentLength = event.data.contentLength;
           console.log(`started downloading ${event.data.contentLength} bytes`);
           break;

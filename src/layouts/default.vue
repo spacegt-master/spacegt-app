@@ -20,7 +20,7 @@
               <v-list-item v-bind="{ ...activatorProps, ...item.activator }" />
             </template>
 
-            <component v-for="child in item.children" :is="VListItem" v-bind="child"></component>
+            <component v-for="child in item.childrenItems" :is="VListItem" v-bind="child"></component>
 
           </component>
         </v-list>

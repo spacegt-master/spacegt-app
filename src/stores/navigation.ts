@@ -85,7 +85,7 @@ export const useNavigationStore = defineStore(
           subtitle: "Manage your account",
           title: "Account",
         },
-        children: [
+        childrenItems: [
           {
             link: true,
             color: "primary",
