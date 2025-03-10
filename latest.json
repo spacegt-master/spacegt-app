@@ -1,11 +1,11 @@
 {
-  "version": "0.1.5",
-  "notes": "Add Roles and Orgs",
-  "pub_date": "2025-03-06T15:10:00.00Z",
+  "version": "0.1.6",
+  "notes": "Add Accounts Manage",
+  "pub_date": "2025-03-10T17:21:00.00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRL0xjRklsSkdWMGRTNmNZdzJvNXpEd1FOTE4wSWYzVVlBbGNhekxPdHNGRy9tNlNPNUpVamgzR3JXaXZwWlpZTkRxVnVNb2xrQjQ4V3FhK0hFcVpzcG55MXZMOXR3Y2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQxMjQ0OTEyCWZpbGU6U3BhY2VndF8wLjEuNV94NjQtc2V0dXAuZXhlCnNaZU92R1AyckZtb09LaHArVDhxVmYvUG55dlc5TGxsRnIrRzJpc2tiKzhVWGM0ZWY2b2dkeTlNM1pjZHlDb0h0Y00xRExqclhydFJSQXhuQWZTQ0FBPT0K",
-      "url": "https://updater.spacegt.com/spacegt/Spacegt_0.1.5_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRL0xjRklsSkdWMFpRYUYxa3gvYXkzM1RmYmZOcUc0U2swUlQ0SS91VFc3enZrRSszMFdJK3RBeFlOeEFUMDcwUWEyZXpMc1NSZU1GRldZKzl3RFVvSTFtT3dvK25MeUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQxNTk4NjUzCWZpbGU6U3BhY2VndF8wLjEuNl94NjQtc2V0dXAuZXhlCi96bU03ajZxUWNPTWxTVzFYL1BhN3RjdlhVZW9PNFN5dzFsVy9wL0tmK0xxM2pMQ3lxS0ZOK0xnQmZ5cnNLdDdoSnY2QlRwMEVLMGpPRFV2RCsxYUFRPT0K",
+      "url": "https://updater.spacegt.com/spacegt/Spacegt_0.1.6_x64-setup.exe"
     }
   }
 }
