@@ -16,15 +16,33 @@ export interface Authorities {
   name: string | null;
 }
 
+const account = ref<Users>();
+
+const authorities = ref<Authorities[]>([]);
+
 export const useAccountsStore = defineStore(
   "data-accounts",
   () => {
-    const account = ref<Users>();
-    const authorities = ref<Authorities[]>([]);
-
     return { account, authorities };
   },
   {
     persist: true,
   }
 );
+
+export function matchAuthorities(
+  authorities: Authorities[],
+  hasAuthority: string[] | undefined
+) {
+  if (!hasAuthority) return true;
+
+  if (hasAuthority) {
+    return (
+      authorities.findIndex((item) => hasAuthority.includes(item.key)) > -1
+    );
+  }
+}
+
+export function hasAuthority(authority: string) {
+  return authorities.value.findIndex((item) => item.key == authority) > -1;
+}

@@ -1,9 +1,12 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { matchAuthorities, useAccountsStore } from "./data/accounts";
 
 export const useNavigationStore = defineStore(
   "navigation",
   () => {
+    const accountStore = useAccountsStore();
+
     const defaultItems = ref([
       {
         type: "VListItem",
@@ -74,10 +77,6 @@ export const useNavigationStore = defineStore(
         color: "primary",
       },
       {
-        type: "VListSubheader",
-        title: "Users",
-      },
-      {
         type: "VListGroup",
         fluid: true,
         activator: {
@@ -107,12 +106,18 @@ export const useNavigationStore = defineStore(
         ],
       },
       {
+        type: "VListSubheader",
+        title: "Accounts",
+      },
+
+      {
         type: "VListItem",
         prependIcon: "mdi-shield-account-outline",
         title: "Roles",
         to: "/accounts/roles",
         link: true,
         color: "primary",
+        hasAuthority: ["ROLES_LIST"],
       },
       {
         type: "VListItem",
@@ -121,6 +126,7 @@ export const useNavigationStore = defineStore(
         to: "/accounts/orgs",
         link: true,
         color: "primary",
+        hasAuthority: ["ORGS_LIST"],
       },
       {
         type: "VListItem",
@@ -129,15 +135,19 @@ export const useNavigationStore = defineStore(
         to: "/accounts/users",
         link: true,
         color: "primary",
+        hasAuthority: ["USERS_MANAGE_ALL"],
       },
       {
         type: "VListItem",
         prependIcon: "mdi-account-multiple-outline",
-        title: "User-Manage",
+        title: "Users Manage USER",
+        subtitle: "sdf",
         to: "/accounts/users/USER",
         link: true,
         color: "primary",
+        hasAuthority: ["USERS_MANAGE_USER"],
       },
+      
     ]);
 
     const appendItems = ref([
@@ -151,7 +161,13 @@ export const useNavigationStore = defineStore(
       },
     ]);
 
-    return { defaultItems, appendItems };
+    const defaultItemsDynamic = computed(() => {
+      return defaultItems.value.filter((item) => {
+        return matchAuthorities(accountStore.authorities, item.hasAuthority);
+      });
+    });
+
+    return { defaultItems: defaultItemsDynamic, appendItems };
   },
   {
     persist: true,

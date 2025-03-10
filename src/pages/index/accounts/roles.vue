@@ -24,7 +24,7 @@
             <span class="text-caption">{{ item.description }}</span>
           </template>
 
-          <template #append>
+          <template #append v-if="hasAuthority('ROLES_EDIT')">
             <v-btn class="text-none text-disabled" prepend-icon="mdi-shield-edit-outline" text="Edit" variant="tonal"
               @click="editItem(item)" />
           </template>
@@ -64,6 +64,7 @@
 <script setup>
 import { AuthoritiesApi } from '@/api/accounts/authorities';
 import { RolesApi } from '@/api/accounts/roles';
+import { hasAuthority } from '@/stores/data/accounts';
 import { snackbar } from '@/stores/snackbar';
 import { onMounted, ref } from 'vue';
 

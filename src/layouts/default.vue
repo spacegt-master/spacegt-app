@@ -53,9 +53,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, shallowRef } from 'vue'
+import { onMounted, ref, shallowRef } from 'vue'
 import { useNavigationStore } from '@/stores/navigation'
-import { VListGroup, VListItem, VListSubheader } from 'vuetify/components'
+import { VListGroup, VListItem } from 'vuetify/components'
 
 const navigationStore = useNavigationStore()
 
@@ -73,6 +73,7 @@ const componentMatch = (type: string) => {
       return VListGroup
   }
 }
+ 
 </script>
 
 <style lang="scss" scoped></style>

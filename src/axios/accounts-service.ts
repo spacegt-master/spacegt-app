@@ -1,4 +1,4 @@
-import { useAuthenticationStore } from "@/stores/authentication";
+import { useAuthorizationStore } from "@/stores/authorization";
 import { snackbar } from "@/stores/snackbar";
 import axios from "axios";
 
@@ -9,8 +9,8 @@ const service = axios.create({
 
 service.interceptors.request.use(
   (config) => {
-    const authentication = useAuthenticationStore();
-    config.headers[authentication.head] = authentication.getFullToken;
+    const authorizationStore = useAuthorizationStore();
+    config.headers[authorizationStore.head] = authorizationStore.getFullToken;
     return config;
   },
   (error) => {

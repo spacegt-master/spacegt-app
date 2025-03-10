@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import { ref, reactive, computed } from "vue";
 
-export const useAuthenticationStore = defineStore(
-  "authentication",
+export const useAuthorizationStore = defineStore(
+  "authorization",
   () => {
     const head = ref("Authorization");
     const prefix = ref("Bearer");

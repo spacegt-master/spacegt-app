@@ -333,7 +333,6 @@ const loadRoles = async () => {
 
 onMounted(() => {
   loadRoles()
-  console.log(route.params.rids)
 })
 
 </script>
