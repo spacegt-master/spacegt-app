@@ -13,7 +13,7 @@
         </v-btn>
         <v-btn variant="text" prepend-icon="mdi-database-import">
           Batch Users
-          <!-- <batch-users @change="handleBatchUsersChange"></batch-users> -->
+          <batch-users :role="search.role" @change="handleBatchUsersChange"></batch-users>
         </v-btn>
       </div>
 
@@ -67,7 +67,7 @@
               </v-col>
               <v-col cols="12">
                 <orgs-btn class="mb-4" width="100%" min-height="50" :org="editedItem.orgItem"
-                  @change="(value) => { editedItem.orgItem = value; editedItem.orgs = value.id }"
+                  @change="(value) => { editedItem.orgItem = value; editedItem.orgs = value.id.join(',') }"
                   @clear="editedItem.orgItem = null; editedItem.orgs = null"></orgs-btn>
               </v-col>
               <v-col cols="12" sm="6">
@@ -205,13 +205,6 @@ const defaultItem = ref({
 })
 const formTitle = computed(() => editedIndex.value === -1 ? 'Add User' : 'Update User')
 
-const orgItemNames = computed(() => {
-  if (editedItem.value.orgItem) {
-    return orgNames(editedItem.value.orgItem).reverse()
-  }
-  return null;
-})
-
 watch(() => [props.rids, route.params.rids], () => {
   options.value.page = 1
 
@@ -220,12 +213,6 @@ watch(() => [props.rids, route.params.rids], () => {
 
 const handleBatchUsersChange = () => {
   loadItems(options.value)
-}
-
-const handleSelectionOrgConfirm = async (value) => {
-  editedItem.value.orgs = value.join(',')
-
-  editedItem.value.orgItem = await OrgsApi.oneById(editedItem.value.orgs)
 }
 
 const addItem = () => {
@@ -308,7 +295,6 @@ const repwdConfirm = async () => {
   closeRepwd()
 }
 
-
 const save = async () => {
   editedItem.value.roles = search.role
 
@@ -331,7 +317,7 @@ const loadItems = async ({ page, itemsPerPage, sortBy }) => {
       sortOrder: sortBy[0] ? sortBy[0].order : '',
       name: search.name,
       role: search.role,
-      org: search.org
+      org: search.org?.join(',')
     })
     items.value = res.records
     totalItems.value = res.total
@@ -347,6 +333,7 @@ const loadRoles = async () => {
 
 onMounted(() => {
   loadRoles()
+  console.log(route.params.rids)
 })
 
 </script>

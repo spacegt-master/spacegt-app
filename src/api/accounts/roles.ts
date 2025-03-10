@@ -1,12 +1,12 @@
 import axios from "@/axios/accounts-service";
 
 export const RolesApi = {
-  list(ids?: string) {
+  list(keys?: string) {
     return axios({
       url: "/api/roles/list",
       method: "get",
       params: {
-        ids,
+        keys,
       },
     });
   },

@@ -41,17 +41,6 @@ const close = () => {
 }
 
 const save = async () => {
-  // const extractIds = (org) => {
-  //   let ids = []
-  //   if (org?.id)
-  //     ids.push(org.id)
-  //   if (org?.parent)
-  //     ids.push(...extractIds(org.parent))
-  //   return ids
-  // }
-  // const org = await OrgsApi.oneById(selected.value.join(''))
-  // emit('confirm', extractIds(org).reverse())
-
   const org = await OrgsApi.oneById(selected.value.join(''))
   
   emit('confirm', org)

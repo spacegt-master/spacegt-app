@@ -35,7 +35,19 @@ const orgNames = (org) => {
 }
 
 const handleConfirm = async (value) => {
-    console.log(value)
+    const extractIds = (org) => {
+        let ids = []
+        if (org?.id)
+            ids.push(org.id)
+        if (org?.parent)
+            ids.push(...extractIds(org.parent))
+        return ids
+    }
+
+    const ids = extractIds(value).reverse()
+
+    value.id = ids
+
     emit('change', value)
 }
 

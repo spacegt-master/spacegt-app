@@ -22,7 +22,7 @@ declare module 'vue-router/auto-routes' {
     '//about': RouteRecordInfo<'//about', '/about', Record<never, never>, Record<never, never>>,
     '//accounts/orgs': RouteRecordInfo<'//accounts/orgs', '/accounts/orgs', Record<never, never>, Record<never, never>>,
     '//accounts/roles': RouteRecordInfo<'//accounts/roles', '/accounts/roles', Record<never, never>, Record<never, never>>,
-    '//accounts/users': RouteRecordInfo<'//accounts/users', '/accounts/users', Record<never, never>, Record<never, never>>,
+    '//accounts/users.[[rids]]': RouteRecordInfo<'//accounts/users.[[rids]]', '/accounts/users/:rids?', { rids?: ParamValueZeroOrOne<true> }, { rids?: ParamValueZeroOrOne<false> }>,
     '//contact': RouteRecordInfo<'//contact', '/contact', Record<never, never>, Record<never, never>>,
     '//ecommerce/category': RouteRecordInfo<'//ecommerce/category', '/ecommerce/category', Record<never, never>, Record<never, never>>,
     '//ecommerce/checkout': RouteRecordInfo<'//ecommerce/checkout', '/ecommerce/checkout', Record<never, never>, Record<never, never>>,
