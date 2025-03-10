@@ -1,17 +1,17 @@
 <template>
   <v-container class="px-6 py-6 mb-6" fluid>
     <v-list class="px-2" lines="two" variant="flat">
-      <v-list-subheader>Update Orgs</v-list-subheader>
+      <v-list-subheader v-if="!enableSelection">Update Orgs</v-list-subheader>
 
-      <div class="text-caption ps-4">
+      <div class="text-caption ps-4" v-if="!enableSelection">
         Avoid excessive organizational structure and layers.
       </div>
 
-      <div class="text-right">
+      <div class="text-right" v-if="!enableSelection">
         <v-btn variant="text" prepend-icon="mdi-bank-plus" @click="newItem(defaultItem)">add root</v-btn>
       </div>
 
-      <v-divider class="my-6" />
+      <v-divider class="mt-6 mb-3" v-if="!enableSelection" />
 
       <div class="pa-3">
         <v-treeview v-model:activated="selected" :items="serverItems" item-value="id" :load-children="fetchOrgs"

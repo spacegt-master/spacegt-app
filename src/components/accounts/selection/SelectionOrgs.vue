@@ -1,0 +1,63 @@
+<template>
+  <v-dialog v-model="dialog" activator="parent" max-width="600px" :fullscreen="$vuetify.display.smAndDown" scrollable>
+
+    <template #default>
+      <v-card prepend-icon="mdi-bank" title="Selection Orgs">
+        <v-divider></v-divider>
+
+        <v-card-text class="pa-0">
+          <Orgs enable-selection v-model="selected"></Orgs>
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-btn text="Close" @click="close()"></v-btn>
+
+          <v-spacer></v-spacer>
+
+          <v-btn color="surface-variant" text="Save" variant="flat" :disabled="selected.length == 0"
+            @click="save()"></v-btn>
+        </v-card-actions>
+      </v-card>
+    </template>
+  </v-dialog>
+</template>
+
+<script setup>
+import { OrgsApi } from '@/api/accounts/orgs';
+import Orgs from '@/pages/index/accounts/orgs.vue';
+import { nextTick, ref } from 'vue';
+
+const emit = defineEmits(['confirm'])
+const dialog = ref(false)
+const selected = ref([])
+
+const close = () => {
+  dialog.value = false
+  nextTick(() => {
+    selected.value = []
+  })
+}
+
+const save = async () => {
+  // const extractIds = (org) => {
+  //   let ids = []
+  //   if (org?.id)
+  //     ids.push(org.id)
+  //   if (org?.parent)
+  //     ids.push(...extractIds(org.parent))
+  //   return ids
+  // }
+  // const org = await OrgsApi.oneById(selected.value.join(''))
+  // emit('confirm', extractIds(org).reverse())
+
+  const org = await OrgsApi.oneById(selected.value.join(''))
+  
+  emit('confirm', org)
+
+  close()
+}
+</script>
+
+<style lang="scss" scoped></style>

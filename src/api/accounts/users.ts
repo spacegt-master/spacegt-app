@@ -59,8 +59,8 @@ export const UsersApi = {
     sortKey: string;
     sortOrder: string;
     name: string;
-    roles: string;
-    orgs: string;
+    role: string;
+    org: string;
   }) {
     PagingProcessor(params);
 

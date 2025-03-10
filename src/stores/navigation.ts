@@ -122,6 +122,14 @@ export const useNavigationStore = defineStore(
         link: true,
         color: "primary",
       },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-account-multiple-outline",
+        title: "Users",
+        to: "/accounts/users",
+        link: true,
+        color: "primary",
+      },
     ]);
 
     const appendItems = ref([

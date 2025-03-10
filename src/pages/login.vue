@@ -24,7 +24,7 @@ const onLogin = (data) => {
     router.push('/')
   } else {
     snackbar({
-      subtitle: data.message,
+      title: data.message,
       type: 'warning',
     })
   }

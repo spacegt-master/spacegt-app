@@ -8,7 +8,7 @@
         malicious behavior can be reduced.
       </div>
 
-      <v-divider class="my-6" />
+      <v-divider class="mt-6 mb-3" />
 
       <div class="pa-3">
         <v-list-item v-for="item in items" :key="item.title" base-color="surface-light" class="mt-2" rounded>
@@ -90,12 +90,12 @@ const save = async () => {
   const res = await RolesApi.edit({ id: editedId.value, authorities: selected.value.join(',') })
   if (res) {
     snackbar({
-      subtitle: 'Edit successfully',
+      title: 'Edit successfully',
       type: 'success'
     })
   } else {
     snackbar({
-      subtitle: 'Edit failure',
+      title: 'Edit failure',
       type: 'error'
     })
   }

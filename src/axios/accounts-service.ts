@@ -28,7 +28,7 @@ service.interceptors.response.use(
       error.response.headers["content-type"] === "application/problem+json"
     ) {
       snackbar({
-        subtitle: error.response.data.detail,
+        title: error.response.data.detail,
         type: "error",
         text: undefined,
         timeout: undefined,

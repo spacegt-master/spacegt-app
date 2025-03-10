@@ -7,20 +7,20 @@ export const useSnackbarStore = defineStore("snackbar", () => {
   // success
   const type = ref();
 
-  const subtitle = ref();
+  const title = ref();
 
   const text = ref();
 
   const timeout = ref();
 
   const start = (options: {
-    subtitle: string;
+    title: string;
     type: string;
     text: string | null | undefined;
     timeout: number | null | undefined;
   }) => {
     type.value = options.type;
-    subtitle.value = options.subtitle;
+    title.value = options.title;
     text.value = options.text;
 
     timeout.value = options.timeout || 2000;
@@ -30,7 +30,7 @@ export const useSnackbarStore = defineStore("snackbar", () => {
   return {
     snackbar,
     type,
-    subtitle,
+    title,
     text,
     timeout,
     start,
@@ -38,7 +38,7 @@ export const useSnackbarStore = defineStore("snackbar", () => {
 });
 
 export const snackbar = (options: {
-  subtitle: string;
+  title: string;
   type: "error" | "info" | "success" | "warning";
   text: string | null | undefined;
   timeout: number | null | undefined;
