@@ -22,17 +22,7 @@
 
         <v-divider class="align-self-center" length="24" vertical />
 
-        <v-btn class="me-2" height="48" icon>
-          <v-avatar color="surface-light" image="https://cdn.vuetifyjs.com/images/john.png" size="32" />
-
-          <v-menu activator="parent">
-            <v-list density="compact" nav>
-              <v-list-item append-icon="mdi-cog-outline" link title="Settings" to="/user/settings" />
-
-              <v-list-item append-icon="mdi-logout" link title="Logout" to="/login" />
-            </v-list>
-          </v-menu>
-        </v-btn>
+        <account-btn></account-btn>
       </div>
 
       <div class="d-flex ga-2 align-center">

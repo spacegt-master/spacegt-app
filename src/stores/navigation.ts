@@ -30,6 +30,18 @@ export const useNavigationStore = defineStore(
       },
       {
         type: "VListSubheader",
+        title: "AI",
+      },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-chat-processing-outline",
+        title: "AI Chat",
+        to: "/ai/chat",
+        link: true,
+        color: "primary",
+      },
+      {
+        type: "VListSubheader",
         title: "Ecommerce",
       },
       {
@@ -63,6 +75,50 @@ export const useNavigationStore = defineStore(
         to: "/ecommerce/order-history",
         link: true,
         color: "primary",
+      },
+
+      {
+        type: "VListSubheader",
+        title: "Accounts",
+        hasAuthority: ["ROLES_LIST", "ORGS_LIST", "USERS_MANAGE_ALL"],
+      },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-shield-account-outline",
+        title: "Roles",
+        to: "/accounts/roles",
+        link: true,
+        color: "primary",
+        hasAuthority: ["ROLES_LIST"],
+      },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-bank",
+        title: "Orgs",
+        to: "/accounts/orgs",
+        link: true,
+        color: "primary",
+        hasAuthority: ["ORGS_LIST"],
+      },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-account-multiple-outline",
+        title: "Users",
+        subtitle: "Manage users in all roles.",
+        to: "/accounts/users",
+        link: true,
+        color: "primary",
+        hasAuthority: ["USERS_MANAGE_ALL"],
+      },
+      {
+        type: "VListItem",
+        prependIcon: "mdi-account-multiple-outline",
+        title: "Users Manage USER",
+        subtitle: "The user who manages the User role.",
+        to: "/accounts/users/USER",
+        link: true,
+        color: "primary",
+        hasAuthority: ["USERS_MANAGE_USER"],
       },
       {
         type: "VListSubheader",
@@ -105,49 +161,6 @@ export const useNavigationStore = defineStore(
           },
         ],
       },
-      {
-        type: "VListSubheader",
-        title: "Accounts",
-      },
-
-      {
-        type: "VListItem",
-        prependIcon: "mdi-shield-account-outline",
-        title: "Roles",
-        to: "/accounts/roles",
-        link: true,
-        color: "primary",
-        hasAuthority: ["ROLES_LIST"],
-      },
-      {
-        type: "VListItem",
-        prependIcon: "mdi-bank",
-        title: "Orgs",
-        to: "/accounts/orgs",
-        link: true,
-        color: "primary",
-        hasAuthority: ["ORGS_LIST"],
-      },
-      {
-        type: "VListItem",
-        prependIcon: "mdi-account-multiple-outline",
-        title: "Users",
-        to: "/accounts/users",
-        link: true,
-        color: "primary",
-        hasAuthority: ["USERS_MANAGE_ALL"],
-      },
-      {
-        type: "VListItem",
-        prependIcon: "mdi-account-multiple-outline",
-        title: "Users Manage USER",
-        subtitle: "sdf",
-        to: "/accounts/users/USER",
-        link: true,
-        color: "primary",
-        hasAuthority: ["USERS_MANAGE_USER"],
-      },
-      
     ]);
 
     const appendItems = ref([

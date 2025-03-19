@@ -17,11 +17,11 @@
         "height": 720,
         "minWidth": 845,
         "minHeight": 600,
-        "fullscreen": false,
         "center": true,
-        "decorations": false,
+        "transparent": true,
         "visible": false,
-        "transparent": false,
+        "fullscreen": false,
+        "decorations": false,
         "shadow": false
       },
       {
@@ -31,11 +31,11 @@
         "height": 720,
         "minWidth": 845,
         "minHeight": 600,
-        "fullscreen": false,
         "center": true,
-        "decorations": false,
-        "visible": true,
         "transparent": true,
+        "visible": true,
+        "fullscreen": false,
+        "decorations": false,
         "shadow": false
       }
     ],
