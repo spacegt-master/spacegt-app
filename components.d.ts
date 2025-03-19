@@ -9,7 +9,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     AccountBtn: typeof import('./src/components/window/AccountBtn.vue')['default']
     AppBar: typeof import('./src/components/window/AppBar.vue')['default']
-    AvatarBtn: typeof import('./src/components/window/AvatarBtn.vue')['default']
     BatchUsers: typeof import('./src/components/accounts/BatchUsers.vue')['default']
     CheckingForUpdates: typeof import('./src/components/CheckingForUpdates.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
