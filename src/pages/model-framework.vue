@@ -20,7 +20,7 @@
             <model-render class="rounded-lg	"></model-render>
           </v-col>
           <v-col class="pl-md-4" :class="{ 'h-100': $vuetify.display.mdAndUp }" cols="12" md="4" order="1" order-md="2">
-            <v-sheet class=" h-100 pr-4" :class="{ 'overflow-auto': $vuetify.display.mdAndUp }">
+            <div class=" h-100 pr-4" :class="{ 'overflow-auto': $vuetify.display.mdAndUp }">
               <v-rating color="amber-darken-2" density="compact" model-value="4" readonly />
 
               <div class="text-md-h4 font-weight-bold mb-2 text-h5">Developer Backpack</div>
@@ -72,7 +72,7 @@
 
               <v-btn v-for="icon in icons" :key="icon" color="medium-emphasis" :icon="icon" size="small"
                 variant="text" />
-            </v-sheet>
+            </div>
           </v-col>
         </v-row>
       </v-container>

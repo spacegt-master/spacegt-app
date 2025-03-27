@@ -41,6 +41,14 @@ export const useNavigationStore = defineStore(
         color: "primary",
       },
       {
+        type: "VListItem",
+        prependIcon: "mdi-library",
+        title: "Knowledge Library",
+        to: "/ai/knowledge-library",
+        link: true,
+        color: "primary",
+      },
+      {
         type: "VListSubheader",
         title: "Ecommerce",
       },
