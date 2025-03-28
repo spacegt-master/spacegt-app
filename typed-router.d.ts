@@ -25,6 +25,7 @@ declare module 'vue-router/auto-routes' {
     '//accounts/users.[[rids]]': RouteRecordInfo<'//accounts/users.[[rids]]', '/accounts/users/:rids?', { rids?: ParamValueZeroOrOne<true> }, { rids?: ParamValueZeroOrOne<false> }>,
     '//ai/chat': RouteRecordInfo<'//ai/chat', '/ai/chat', Record<never, never>, Record<never, never>>,
     '//ai/knowledge-library': RouteRecordInfo<'//ai/knowledge-library', '/ai/knowledge-library', Record<never, never>, Record<never, never>>,
+    '//ai/live': RouteRecordInfo<'//ai/live', '/ai/live', Record<never, never>, Record<never, never>>,
     '//contact': RouteRecordInfo<'//contact', '/contact', Record<never, never>, Record<never, never>>,
     '//ecommerce/category': RouteRecordInfo<'//ecommerce/category', '/ecommerce/category', Record<never, never>, Record<never, never>>,
     '//ecommerce/checkout': RouteRecordInfo<'//ecommerce/checkout', '/ecommerce/checkout', Record<never, never>, Record<never, never>>,
