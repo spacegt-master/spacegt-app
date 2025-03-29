@@ -1,14 +1,14 @@
 <template>
     <v-container class="h-100">
         <div class="d-flex ga-8">
-            <v-card min-width="500px" min-height="800" title="Media">
+            <v-card title="Media">
                 <template #text>
                     <audio ref="audioRef" autoplay="true"></audio>
-                    <video ref="videoRef" style="width:600px;" autoplay="true" playsinline="true"></video>
+                    <video ref="videoRef" style="width:450px;" autoplay="true" playsinline="true"></video>
                 </template>
             </v-card>
 
-            <v-card min-width="500px" title="Settings">
+            <v-card min-width="400px" title="Settings">
                 <template #text>
                     <v-checkbox v-if="false" v-model="useStun" label="Use STUN server"></v-checkbox>
 
@@ -36,8 +36,11 @@
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { useWebSocket } from '@vueuse/core'
+import { useAuthorizationStore } from '@/stores/authorization';
 
-const webSocket = useWebSocket('ws://192.168.124.10:12001/api/session?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNjYwMDAwNDY0NiIsImlhdCI6MTc0MzA1OTgyOSwiZXhwIjoxNzQzMTQ2MjI5LCJpc3MiOiJTcGFjZWd0In0.8Z6GYsjDj2NTUfafqMNrwr5C3na6WRz0DNOWKOB3BTg',
+const authorizationStore = useAuthorizationStore()
+
+const webSocket = useWebSocket('wss://ai-live.spacegt.com/api/session?token=' + authorizationStore.token,
     {
         onMessage(ws, event) {
             try {
@@ -96,8 +99,6 @@ const prefabricated = () => {
         // or
         chapter: 1,
     })
-
-    message.value = ''
 }
 
 const ai = () => {
@@ -106,7 +107,9 @@ const ai = () => {
         message: message.value,
         interrupt: true,
         type: 'echo'
-    }) 
+    })
+
+    message.value = ''
 }
 
 // 会话初始化
