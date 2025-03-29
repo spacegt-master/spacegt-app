@@ -40,15 +40,7 @@ import { useAuthorizationStore } from '@/stores/authorization';
 
 const authorizationStore = useAuthorizationStore()
 
-const webSocket = useWebSocket('wss://ai-live.spacegt.com/api/session?token=' + authorizationStore.token,
-    {
-        onMessage(ws, event) {
-            try {
-                messageQueue.push(JSON.parse(event.data))
-            } catch (e) { console.error(e) }
-        }
-    }
-)
+const webSocket = ref({})
 
 const starting = ref(false)
 
@@ -67,8 +59,7 @@ var pc = null;
 const audioRef = ref()
 const videoRef = ref()
 
-
-watch(webSocket.data, (value) => {
+watch(() => webSocket.value.data, (value) => {
     try {
         const data = JSON.parse(value)
 
@@ -174,7 +165,7 @@ const exchange_signaling = () => {
 // 用来做等待队列
 const messageQueue = []
 const sendWait = async (data, wait = true) => {
-    webSocket.send(JSON.stringify(data))
+    webSocket.value.send(JSON.stringify(data))
 
     if (wait) {
         const timeout = 10000
@@ -201,12 +192,22 @@ const sendWait = async (data, wait = true) => {
 // close peer connection
 const closeAll = () => {
     setTimeout(() => {
-        webSocket.close()
+        webSocket.value.close()
         pc.close()
     }, 500);
 }
 
 onMounted(() => {
+    webSocket.value = useWebSocket(import.meta.env.VITE_APP_AI_LIVE_SERVICE_WSS + '/api/session?token=' + authorizationStore.token,
+        {
+            onMessage(ws, event) {
+                try {
+                    messageQueue.push(JSON.parse(event.data))
+                } catch (e) { console.error(e) }
+            }
+        }
+    )
+
     initialization()
 
     exchange_signaling()
