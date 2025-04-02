@@ -1,11 +1,11 @@
 {
-  "version": "0.1.7",
-  "notes": "Update Window Style",
-  "pub_date": "2025-03-19T11:06:00.00Z",
+  "version": "0.1.8",
+  "notes": "Add AI Live",
+  "pub_date": "2025-03-29T14:41:00.00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRL0xjRklsSkdWMGQzUWFMN1YrdXFQU1RQU3k1K2ZRbmVrellqakRkQlhrVHJFTExXOGhCS20xRGVHeCthL2haSG9URzY2NUdZdi93TWI1eXMzV1RzSDIrN2U2dm1tU1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQyMzUzNjY5CWZpbGU6U3BhY2VndF8wLjEuN194NjQtc2V0dXAuZXhlCm5xcTVITkgvK01iZVVNbk1RcTBVVm1zbXNIRDZaM3F4dXZsTUFIM3psb0I3TCttOFdSN3ViTnkwTTA3S1VtVWNMVkc1L05QQnNDSUJtOHdxT0QwOUF3PT0K",
-      "url": "https://updater.spacegt.com/spacegt/Spacegt_0.1.7_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRL0xjRklsSkdWMFpaaVMyb0E5M3JNazJ4L0NJbXhVbDNScmZXeGNHRkNLSFBZVVVMN2UxVG9tRlNyeEVFaXA5VmFzUnh3U3dhUzhwVjFDdVp6Y2xLMWF6cTNEdVFGWVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQzMjMwNDI4CWZpbGU6U3BhY2VndF8wLjEuOF94NjQtc2V0dXAuZXhlCmNKclRQa3ozU21xbFRFaE5jRjNYU2xkblhxTDh1Nm5qQjhJaGpmTVhycXBsVmpiVVIxclRyOFJLZ0J3c3lMVmVNeVNuYmdPaVEwWDdPNnpYcSs0S0NRPT0K",
+      "url": "https://updater.spacegt.com/spacegt/Spacegt_0.1.8_x64-setup.exe"
     }
   }
 }
